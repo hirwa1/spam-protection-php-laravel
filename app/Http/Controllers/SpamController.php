@@ -16,7 +16,8 @@ class SpamController extends Controller
 {
     //Reported Spam
     public function index(){
-        return Inertia::render('Spam/Index' , [    ]);
+        $report = DB::table('spam') ->get();
+        return Inertia::render('Spam/Index' , [  'all_report'=>$report  ]);
     }
 
 
@@ -40,11 +41,10 @@ class SpamController extends Controller
         $spam_store = new SpamService( $source,$state,$report_type,$report_id,$report_id, $user_id, $referenceResourceType );
         $save = $spam_store->store();
 
-        if($save == true){
-            dd('True');
-        }else{
-            dd('False');
-        }
+
+        // Check Results
+        if($save == true){ return redirect('/spam');
+        }else{ dd('False'); }
 
 
 
