@@ -46,6 +46,12 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('spam')" :active="route().current('spam')">
+                                 Spam report
+                                </NavLink>
+                                <NavLink :href="route('new')" :active="route().current('new')">
+                                    Report new spam
+                                </NavLink>
                             </div>
                         </div>
 
