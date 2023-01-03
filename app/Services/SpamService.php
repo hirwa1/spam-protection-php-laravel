@@ -26,6 +26,24 @@ class SpamService
 
     public function store(){
 
+    try {
+        //code...
+      $store = new Spam;
+      $store->source = $this->source;
+      $store->state= $this->state;
+      $store->report_type = $this->report_type;
+      $store->report_id = $this->report_id;
+      $store->user_id = $this->user_id;
+      $store->referenceResourceType = $this->referenceResourceType;
+      $store->save();
+
+      return true;
+    } catch (\Throwable $th) {
+        //throw $th;
+        return false;
+    }
+
+
     }
 
 }

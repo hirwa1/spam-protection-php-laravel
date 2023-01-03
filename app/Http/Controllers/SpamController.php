@@ -36,7 +36,17 @@ class SpamController extends Controller
         $referenceResourceType = $request->referenceResourceType;
 
 
-        // Sav espam report service
-        $hertage = new SpamService( $source,$state,$report_type,$report_id,$report_id, $user_id, $referenceResourceType );
+        // Save spam
+        $spam_store = new SpamService( $source,$state,$report_type,$report_id,$report_id, $user_id, $referenceResourceType );
+        $save = $spam_store->store();
+
+        if($save == true){
+            dd('True');
+        }else{
+            dd('False');
+        }
+
+
+
     }
 }
