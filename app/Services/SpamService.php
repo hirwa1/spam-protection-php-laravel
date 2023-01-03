@@ -8,15 +8,17 @@ class SpamService
 {
 
     public $source;
+    public $message;
     public $state;
     public $report_type;
     public $report_id ;
     public $user_id;
     public $referenceResourceType;
 
-    public function __construct($source, $state, $report_type ,$report_id ,$user_id ,$referenceResourceType){
+    public function __construct($source, $message, $state, $report_type ,$report_id ,$user_id ,$referenceResourceType){
 
         $this->source = $source;
+        $this->message = $message;
         $this->state = $state;
         $this->report_type = $report_type;
         $this->report_id = $report_id;
@@ -30,6 +32,7 @@ class SpamService
         //code...
       $store = new Spam;
       $store->source = $this->source;
+      $store->message = $this->message;
       $store->state= $this->state;
       $store->report_type = $this->report_type;
       $store->report_id = $this->report_id;

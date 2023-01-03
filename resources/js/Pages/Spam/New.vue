@@ -6,8 +6,9 @@ import { useForm , Link} from '@inertiajs/inertia-vue3';
 
 const form = useForm({
     source: null,
-    state: null,
-    report_type: null,
+    message: null,
+    state: 'Open',
+    report_type: 'Spam',
     report_id: null,
     user_id: null,
     referenceResourceType: null,
@@ -37,18 +38,26 @@ function reportSpam() {
 
                          <div class="mt-4">
                            <label for="state" class="block mb-2 text-sm font-medium text-gray-900 ">Spam sate</label>
-                           <input type="text"  name="state" v-model="form.state"   class="border-gray-400 rounded w-full" placeholder="" >
+                           <input type="text" readonly   name="state" v-model="form.state"   class="border-gray-400 rounded w-full" placeholder="" >
                          </div>
 
                          <div class="mt-4">
                            <label for="report_type" class="block mb-2 text-sm font-medium text-gray-900 ">Spam report type</label>
-                           <input type="text"  name="report_type" v-model="form.report_type"   class="border-gray-400 rounded w-full" placeholder="" >
+                           <input type="text" readonly  name="report_type" v-model="form.report_type"   class="border-gray-400 rounded w-full" placeholder="" >
                          </div>
 
                          <div class="mt-4">
                            <label for="referenceResourceType" class="block mb-2 text-sm font-medium text-gray-900 ">Spam report reference  type</label>
                            <input type="text"  name="referenceResourceType" v-model="form.referenceResourceType"   class="border-gray-400 rounded w-full" placeholder="" >
                          </div>
+
+                         <div class="mt-4">
+                           <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Message</label>
+                           <textarea   name="message" v-model="form.message"   class="border-gray-400 rounded w-full">
+
+                           </textarea>
+                         </div>
+
 
                         <div class="mb-6 mt-4">
                           <button class="rounded bg-blue-600 p-3 text-white"  type="submit" :disabled="form.processing">Report Spam</button>

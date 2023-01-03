@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('report_id');
             $table->string('user_id');
             $table->string('referenceResourceType');
+            $table->longText('message');
             $table->timestamps();
         });
     }

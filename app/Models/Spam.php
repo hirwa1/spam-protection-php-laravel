@@ -17,6 +17,7 @@ class Spam extends Model
         'user_id',
         'referenceResourceType',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'message'
    ];
 }

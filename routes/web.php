@@ -31,6 +31,7 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'),'verified',
         Route::get('/spam', 'index')->name('spam');
         Route::get('/spam/new', 'new')->name('new');
         Route::post('/spam', 'create')->name('create');
+        Route::put('/spam/{api}', 'update')->name('update');
      });
 
 });
