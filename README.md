@@ -14,7 +14,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 5. Mark Spam as resolved 
 6. MCV Architecture was followed
 
-## if you want to implement CQRS  in the Laravel project, we tried to implement it in this repo. We Also implemented a simple SOLID Principle
+## if you want to implement CQRS  Pattern in the Laravel project, we tried to implement it in this repo. We Also implemented a simple SOLID Principle
 
 ## Install project 
 
