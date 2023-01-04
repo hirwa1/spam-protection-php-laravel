@@ -13,7 +13,7 @@ class SpamRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,11 @@ class SpamRequest extends FormRequest
     {
         return [
             //
+            'source' => 'required|max:255',
+            'message' => 'required|max:255',
+            'state' => 'required|max:255',
+            'report_type' => 'required|max:255',
+            'referenceResourceType' => 'required|max:255',
         ];
     }
 }

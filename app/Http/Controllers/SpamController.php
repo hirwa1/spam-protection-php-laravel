@@ -30,7 +30,7 @@ class SpamController extends Controller
 
 
     //Spam Creation Request
-    public function create(Request $request){
+    public function create(SpamRequest $request){
         $source = $request->source;
         $message = $request->message;
         $state = $request->state;
@@ -46,8 +46,11 @@ class SpamController extends Controller
 
 
         // Check Results
-        if($save == true){ return redirect('/spam');
-        }else{ dd('False'); }
+        if($save == true){
+            return redirect('/spam');
+        }else{
+             dd('False');
+             }
     }
 
 
@@ -61,7 +64,5 @@ class SpamController extends Controller
             $update = DB::table('spam') ->where('report_id', $api)->update(['State' => 'CLOSED',]);
             return redirect('/spam');
         }
-
-
     }
 }
